@@ -16,7 +16,8 @@ get_header();
 
             <div id="heroCtaDiv">
                 <a href="#">Explore Kitchen utensils</a>
-                <a href="#">Find Inspiring recipes</a>
+                <!--linket er rigtig, det må være noget i CSS der gør man ikke kan trykke på knappen??-->
+                <a href="<?php echo get_post_type_archive_link('recipe'); ?>">Find Inspiring recipes</a>
             </div>
         </div>
     </section>

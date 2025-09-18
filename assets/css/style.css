@@ -90,11 +90,13 @@ h4 {
     font-family: "borax-variable", sans-serif;
     font-size: 2.5rem;
     font-style: italic;
+    text-decoration: none;
+    color: black;
 }
 
-.globalNavTop a {
-    padding: 0.5rem 1rem;
+.globalNavTop #login {
     background: var(--cta);
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     color: white;
@@ -925,3 +927,19 @@ aside div img {
         font-size: 0.825rem;
     }
 }
+
+/*404 side*/
+#btn-404{
+    background-color: var(--cta);
+    width: 100%;
+        display: block;
+        background-color: var(--normalButton);
+        text-decoration: none;
+        color: white;
+        margin-top: 10px;
+        padding-block: 0.2rem;
+        border-radius: var(--borderRadius);
+        text-align: center;
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
