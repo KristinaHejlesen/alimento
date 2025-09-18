@@ -1,0 +1,927 @@
+/* TYPOGRAPHY */
+/* ___________________________________ */
+
+/* @import url("https://use.typekit.net/bnw8qmo.css"); */
+
+/* Borax 
+font-family: "borax-variable",
+sans-serif;
+*/
+
+/* Proxima nova
+font-family: "proxima-nova",
+sans-serif;
+ */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); */
+
+/* 
+ font-family: "Roboto",
+ sans-serif;
+  */
+
+/* VARIABLES */
+/* ___________________________________ */
+
+:root {
+    /* Farver */
+
+    --backgroundColor: #fffdfa;
+    --cta: #0faf20;
+    --normalButton: #0b8317;
+    --footer: #f4f4f4;
+    --star: #ffea02;
+    --verification: #006dfb;
+    --tidForfatter: #747474;
+
+    /* Spacere */
+    --layout: 1200px;
+    --sectionSpacer: 3.125rem;
+    --overskriftSpacer: 1.25rem;
+
+    /* Skriftstørrelse */
+    --h1desktop: 2.5rem;
+    --h1hero: 2.5rem;
+    --h2desktop: 2.25rem;
+    --broedtekst: 1.25rem;
+    --footerBroedtekst: 1rem;
+
+    --h1mobile: 1.375rem;
+    --h2mobile: 1.25rem;
+    --broedtekstMobile: 1rem;
+    --kommentarTekst: 0.875rem;
+
+    /* Border-radius */
+    --borderRadius: 10px;
+}
+
+/* GENERAL STYLING */
+/* ___________________________________ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Roboto", sans-serif;
+    line-height: 150%;
+}
+
+/* Header */
+
+/* topdel af navigationen */
+
+.globalNavTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    gap: 1rem;
+}
+
+#logo {
+    font-family: "borax-variable", sans-serif;
+    font-size: 2.5rem;
+    font-style: italic;
+}
+
+.globalNavTop a {
+    padding: 0.5rem 1rem;
+    background: var(--cta);
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 1rem;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.globalNavTop a:hover {
+    transform: scale(1.05);
+    transition: 500ms ease;
+}
+
+#searchBar {
+    border: 2px solid black;
+    width: 600px;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borderRadius);
+    display: flex;
+    justify-content: space-between;
+}
+
+#searchBarMobile {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: var(--borderRadius);
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+}
+
+#searchBar i {
+    color: rgb(70, 70, 70);
+}
+
+#searchBar input {
+    border: none;
+}
+
+#burgerMenu {
+    display: none;
+    font-size: 2rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.globalNavBottom {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.globalNavBottom ul {
+    display: flex;
+    padding: 0.6rem 0 0.6rem 1rem;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.globalNavBottom li {
+    list-style-type: none;
+}
+
+.globalNavBottom a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.globalNavBottom a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.topSectionMobileNav {
+    display: none;
+}
+
+/* Main */
+
+/* Forside */
+
+#heroSection {
+    width: 100%;
+    height: 550px;
+    display: grid;
+}
+
+#heroSection video {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 550px;
+    grid-column: 1;
+    grid-row: 1;
+    display: block;
+}
+
+#heroSection div {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.heroText {
+    z-index: 20;
+}
+
+#heroSection h1 {
+    width: 20ch;
+    font-size: var(--h1hero);
+    padding-top: 3rem;
+}
+
+#heroSection #heroCtaDiv {
+    padding: 2rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#heroCtaDiv a:nth-child(1) {
+    width: 300px;
+    border: 4px solid var(--cta);
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#heroCtaDiv a:nth-child(2) {
+    width: 300px;
+    background-color: var(--cta);
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#heroCtaDiv a:hover {
+    transform: scale(1.05);
+    transition: 500ms ease;
+}
+
+/* Card sektion */
+
+h2 {
+    font-size: var(--h2desktop);
+    margin-block: var(--sectionSpacer) var(--overskriftSpacer);
+}
+
+.cardSection {
+    max-width: 1100px;
+    margin: 0 auto var(--sectionSpacer) auto;
+    padding-inline: 1rem;
+}
+
+.cardWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.cardWrapper img {
+    max-width: 100%;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+.cardHeadline {
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding-top: 3px;
+}
+
+.timeDifficulty {
+    display: flex;
+    gap: 5px;
+    padding-top: 3px;
+    color: var(--tidForfatter);
+    font-size: 0.875rem;
+}
+
+.timeDifficulty span {
+    font-size: 1.2rem;
+}
+
+.rating {
+    padding-top: 5px;
+    color: var(--star);
+}
+
+.cardWrapper a,
+aside a {
+    width: 100%;
+    display: block;
+    background-color: var(--normalButton);
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    padding-block: 0.2rem;
+    border-radius: var(--borderRadius);
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.cardWrapper a:hover {
+    transform: scale(1.05);
+    transition: 500ms ease;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--footer);
+    box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.15);
+}
+
+.footerSection {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+
+.footerWrapper {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+#logoFooter {
+    font-family: "borax-variable", sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.mostVisited {
+    display: grid;
+}
+
+.mostVisited a {
+    color: black;
+}
+
+.soMe {
+    display: flex;
+    gap: 1rem;
+}
+
+.soMe a {
+    color: black;
+}
+
+.soMe i {
+    font-size: 2rem;
+}
+
+/* Blog single CSS */
+
+.headlineBlogpost {
+    font-size: var(--h1desktop);
+}
+
+.blogpostSingleHeroSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto var(--sectionSpacer) auto;
+    padding-inline: 1rem;
+}
+
+.blogpostSingleHeroSection img {
+    max-width: 100%;
+    border-radius: var(--borderRadius);
+}
+
+.blogpostSingleHeroSection:nth-child(1) {
+    margin-top: 2rem;
+}
+
+.mainContentSingleBlog {
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    gap: 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+
+.mainContentSingleBlog h2 {
+    margin-top: var(--overskriftSpacer);
+    font-size: var(--h2desktop);
+}
+
+.mainContentSingleBlog p {
+    font-size: var(--broedtekst);
+}
+
+.mainContentSingleBlog img {
+    max-width: 100%;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+aside div {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+aside div img {
+    width: 100%;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+
+.asideAuthorTime {
+    color: var(--tidForfatter);
+    font-size: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* Blog Archive */
+
+.blogTitle {
+    text-align: center;
+    font-size: var(--h1desktop);
+    margin-block: var(--sectionSpacer) var(--overskriftSpacer);
+}
+
+.blogDescription {
+    max-width: 65ch;
+    margin: 0 auto var(--sectionSpacer) auto;
+    font-size: var(--broedtekst);
+    padding-inline: 1rem;
+}
+
+.blogposts {
+    max-width: 1100px;
+    margin: 0 auto var(--sectionSpacer) auto;
+}
+
+.blogPostsWrapper {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 2rem;
+    margin-bottom: var(--sectionSpacer);
+    padding-inline: 1rem;
+}
+
+.blogPostsWrapper img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.blogPostsWrapper a {
+    color: black;
+    text-decoration: none;
+}
+
+.blogPostsWrapper a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.blogPostsWrapper h2 {
+    margin-block: 0;
+    font-size: var(--h2desktop);
+}
+
+.blogPostsWrapper p {
+    font-size: var(--broedtekst);
+}
+
+.relatedWrapper {
+    max-width: 1100px;
+    margin: 0 auto var(--sectionSpacer) auto;
+    padding-inline: 1rem;
+}
+
+/* Recipe archive */
+.archiveH1 {
+    text-align: center;
+    margin-block: var(--sectionSpacer) var(--overskriftSpacer);
+}
+
+.introText {
+    max-width: 65ch;
+    margin: 0 auto 3rem auto;
+}
+
+.introSection {
+    max-width: 1100px;
+    margin: 0 auto var(--overskriftSpacer) auto;
+    padding-inline: 1rem;
+}
+
+.introSection a {
+    padding: 0.5rem 1rem;
+    background: var(--cta);
+    color: white;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Recipe single */
+
+.recipe_headline_single {
+    font-size: 3rem;
+}
+
+.description {
+    font-size: 1rem;
+}
+
+.singleRecipeSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: 2rem;
+}
+
+.singleRecipeSection:nth-child(1) {
+    padding-top: 2rem;
+}
+
+.recipeImage {
+    max-width: 100%;
+    border-radius: var(--borderRadius);
+    height: 345px;
+    object-fit: cover;
+}
+
+.recipeInfo>* {
+    padding-block: 0.5rem;
+}
+
+.author_sektion {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author_sektion a {
+    color: black;
+}
+
+.author_sektion img {
+    border-radius: var(--borderRadius);
+}
+
+.timeDifficultyPrint {
+    display: flex;
+    gap: 2rem;
+}
+
+.singleRecipeSection ul {
+    list-style-position: inside;
+    padding: 0;
+}
+
+.singleRecipeSection li {
+    padding-bottom: 0.5rem;
+}
+
+.comments {
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding-inline: 1rem;
+}
+
+.comments p {
+    max-width: 65ch;
+}
+
+.user {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.user img {
+    border-radius: var(--borderRadius);
+}
+
+.firstComment {
+    margin-bottom: 1rem;
+}
+
+.secondComment {
+    margin-left: 2rem;
+    margin-bottom: 4rem;
+}
+
+#recipeComment {
+    max-width: 100%;
+    padding-block: 0.5rem;
+    border-radius: var(--borderRadius);
+}
+
+.writeAComment {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+}
+
+.writeAComment button {
+    width: 100px;
+    border-radius: var(--borderRadius);
+    border: 0.5px solid black;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.answer {
+    border: 1px solid black;
+    padding: 0.25rem 0.5rem;
+    color: black;
+    border-radius: var(--borderRadius);
+    text-decoration: none;
+    margin-block: 0.5rem 1rem;
+    display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
+    #searchBar {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    /* forside  */
+
+    #heroSection {
+        height: auto;
+    }
+
+    #searchBar,
+    .globalNavTop a {
+        display: none;
+    }
+
+    .globalNavBottom {
+        display: none;
+        flex-direction: column;
+        background: white;
+        width: 50%;
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+    }
+
+    .globalNavBottom.active {
+        display: flex;
+    }
+
+    #burgerMenu {
+        border: none;
+        background-color: white;
+        cursor: pointer;
+        display: block;
+    }
+
+    /* Top sektionen inde i mobile menuen (login + søgefeldt) */
+    .topSectionMobileNav {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    .topSectionMobileNav a {
+        padding: 0.5rem 1rem;
+        background: var(--cta);
+        color: white;
+        border-radius: var(--borderRadius);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+    }
+
+    .topSectionMobileNav a:hover {
+        text-decoration: none;
+        transform: scale(1.05);
+        transition: 500ms ease;
+    }
+
+    .globalNavBottom ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .globalNavBottom li a {
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    #heroSection video {
+        height: 330px;
+        object-position: left;
+    }
+
+    #heroSection div {
+        grid-column: 1;
+        grid-row: 2;
+        width: auto;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    #heroSection h1 {
+        font-size: var(--h1mobile);
+        width: auto;
+        padding-top: 1rem;
+    }
+
+    #heroSection #heroCtaDiv {
+        flex-direction: row;
+        padding-top: 1rem;
+    }
+
+    #heroCtaDiv a:nth-child(1) {
+        width: 50%;
+    }
+
+    #heroCtaDiv a:nth-child(2) {
+        width: 50%;
+    }
+
+    /* Blog archive */
+
+    body .blogPostsWrapper h2 {
+        font-size: var(--h2mobile);
+    }
+
+    body .blogPostsWrapper p {
+        font-size: var(--broedtekstMobile);
+    }
+
+    body .blogPostsWrapper img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    body .blogDescription {
+        max-width: 65ch;
+        margin: 0 auto var(--sectionSpacer) auto;
+        font-size: var(--broedtekstMobile);
+    }
+
+    /* Blog single CSS media query */
+
+    .blogpostSingleHeroSection {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 1100px;
+    }
+
+    .mainContentSingleBlog {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-inline: 1rem;
+    }
+
+    .mainContentSingleBlog h2 {
+        font-size: var(--h2mobile);
+    }
+
+    .mainContentSingleBlog p {
+        font-size: var(--broedtekstMobile);
+    }
+
+    .headlineBlogpost {
+        font-size: var(--h1mobile);
+    }
+
+    /* Recipe single */
+
+    body .singleRecipeSection {
+        grid-template-columns: 1fr;
+        padding-inline: 1rem;
+    }
+
+    body .recipeImage {
+        grid-row: 1;
+        height: auto;
+    }
+
+    .recipeInfo {
+        grid-row: 2;
+    }
+
+    body .recipe_headline_single {
+        font-size: var(--h1mobile);
+    }
+
+    body .description {
+        font-size: var(--broedtekstMobile);
+    }
+
+    .singleRecipeSection:nth-child(1) {
+        padding-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    body .writeAComment {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #heroSection #heroCtaDiv {
+        flex-direction: column;
+    }
+
+    #heroSection h1 {
+        font-size: var(--h1mobile);
+        width: auto;
+        padding-top: 0.5rem;
+    }
+
+    #heroCtaDiv a:nth-child(1) {
+        min-width: 100%;
+        padding-block: 0.5rem;
+    }
+
+    #heroCtaDiv a:nth-child(2) {
+        width: 100%;
+        padding-block: 0.5rem;
+    }
+
+    #heroSection video {
+        height: 200px;
+        object-position: left;
+    }
+
+    h2 {
+        font-size: var(--h2mobile);
+    }
+
+    .cardHeadline {
+        font-size: 1rem;
+    }
+
+    .timeDifficulty {
+        font-size: 0.825rem;
+    }
+
+    .timeDifficulty span {
+        font-size: 1rem;
+    }
+
+    .rating i {
+        font-size: 0.825rem;
+    }
+
+    .cardWrapper a {
+        font-size: 1rem;
+    }
+
+    #logo {
+        font-size: 2rem;
+    }
+
+    .globalNavTop {
+        padding-inline: 1rem;
+    }
+
+    /* Blog archive */
+
+    body .blogPostsWrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    body .blogPostsWrapper img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* recipe single */
+    .timeDifficultyPrint {
+        font-size: 0.825rem;
+    }
+}
