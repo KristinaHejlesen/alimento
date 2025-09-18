@@ -3,7 +3,7 @@
 function alimento_files()
 {
     /*henter javscript filen, version er sat 1.0, wp spørger efter om du øsnker at køre js lige før </body> og true beyder ja det vil vi gerne, istedet for i toppen af sektionen */
-    wp_enqueue_script('alimento-js', get_theme_file_uri('wp-content\themes\alimento\assets\js\app.js'), array('jquery'), '1.0', true);
+    wp_enqueue_script('alimento-js', get_theme_file_uri('/assets/js/app.js'), array(), '1.0', true);
     /*henter stylesheet med vores css */
     wp_enqueue_style('alimento', get_theme_file_uri('/assets/css/style.css'));
     /*henter fontawesome */
