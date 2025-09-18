@@ -66,7 +66,7 @@ while (have_posts()) {
                 <img
                     class="blogimage2"
                     src="<?php the_field('image2'); ?>"
-                    alt="iamge of food, nuts and fruits" />
+                    alt="" />
                 <p class="blogContent2">
                     <?php the_field('blog_content2');
                     ?>
@@ -91,7 +91,7 @@ while (have_posts()) {
                 <img
                     class="blogimage4"
                     src="<?php the_field('image4'); ?>"
-                    alt="image of lottie drinking coffe an are tried" />
+                    alt="" />
                 <p class="blogContent4">
                     <?php the_field('blog_content5');
                     ?>

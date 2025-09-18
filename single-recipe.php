@@ -111,7 +111,7 @@ while (have_posts()) {
             'post_type' => 'recipe',
             'posts_per_page' => 3
         ));
-
+        // vi anvender the while loop
         while ($recipe->have_posts()) {
             $recipe->the_post(); ?>
             <div>

@@ -98,8 +98,8 @@ get_header();
                 <div>
                     <img
                         src="<?php the_post_thumbnail_url(); ?>" />
-                    <p class="cardHeadline"><?php
-                                            the_title();
+                    <p class="cardHeadline"><?php echo wp_trim_words(get_the_title(), 7);
+
                                             ?>
                     </p>
                     <div class="timeDifficulty">
