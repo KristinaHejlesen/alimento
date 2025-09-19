@@ -14,8 +14,15 @@ get_header();
 <section class="cardSection">
     <div class="cardWrapper">
         <?php
-        while (have_posts()) {
-            the_post(); ?>
+        //vi laver en custom query, da vi er interessert i at hente vores recipes
+        $recipeSite = new WP_Query(array(
+            //vi vil have post types der hedder recipe
+            'post_type' => 'recipe',
+            'posts_per_page' => 6,
+        ));
+        while ($recipeSite->have_posts()) {
+            $recipeSite->the_post(); ?>
+
             <div>
                 <img
                     src="<?php the_post_thumbnail_url(); ?>"
@@ -60,10 +67,63 @@ get_header();
         }
         ?>
     </div>
+
+
+    <?php
+    /*tilføjer links i bunden af siden */
+    echo paginate_links();
+    ?>
 </section>
 
+<?php
+wp_reset_postdata();
+?>
 
+<!--blogposts-->
+<section class="cardSection">
+    <h2>Find inspiration from the latest blog posts:</h2>
+    <div class="cardWrapper">
+        <?php
+        //vi laver en custom query, da vi er interessert i at hente vores recipes
+        $blog = new WP_Query(array(
+            //vi vil have post types der hedder recipe
+            'post_type' => 'blog',
+            'posts_per_page' => 3
+        ));
 
+        while ($blog->have_posts()) {
+            $blog->the_post(); ?>
+            <div>
+                <img
+                    src="<?php the_post_thumbnail_url(); ?>" />
+                <p class="cardHeadline"><?php echo wp_trim_words(get_the_title(), 7);
+
+                                        ?>
+                </p>
+                <div class="timeDifficulty">
+                    <p>Forfatter: <?php
+                                    //kigger ind i arrayet user
+                                    $forfatter = get_field('authoralimento');
+                                    //vi printer arrayet ud for at se hvilken key vi skal bruge for kun at få navnet ud. 
+                                    // echo '<pre>';
+                                    // print_r($forfatter);
+                                    // echo '</pre>';
+                                    echo $forfatter['display_name'];
+                                    ?>
+                        <br>Dato: <?php
+                                    the_field('date');
+                                    ?>
+
+                    </p>
+                </div>
+                <a href="<?php the_permalink(); ?>">Get inspired</a>
+            </div>
+
+        <?php
+        }
+        ?>
+    </div>
+</section>
 
 
 <?php

@@ -78,6 +78,9 @@ get_header();
             }
             ?>
     </section>
+    <?php
+    wp_reset_postdata();
+    ?>
 
     <!--blogposts-->
     <section class="cardSection">

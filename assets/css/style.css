@@ -409,6 +409,7 @@ footer {
 .mainContentSingleBlog h2 {
     margin-top: var(--overskriftSpacer);
     font-size: var(--h2desktop);
+   
 }
 
 .mainContentSingleBlog p {
@@ -579,7 +580,10 @@ aside div img {
 .timeDifficultyPrint {
     display: flex;
     gap: 2rem;
+    font-size: 1rem;
+    align-items: flex-end;
 }
+
 
 .singleRecipeSection ul {
     list-style-position: inside;
