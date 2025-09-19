@@ -150,7 +150,7 @@ while (have_posts()) {
                                     // echo '</pre>';
                                     echo $forfatter['display_name'];
                                     ?> |</p>
-                    <p>Dato: <?php the_field('time'); ?></p>
+                    <p>Dato: <?php the_field('date'); ?></p>
                 </div>
                 <a href="<?php the_permalink(); ?>    ">Get inspired</a>
             </div>
