@@ -8,7 +8,7 @@ get_header();
     Read and discover different aspects of food. Everything from “how to”
     videos and personal food stories, to the lastest food related trends.
 </p>
-
+<!--her er vores blodpost-->
 <section class="blogposts">
     <?php
     while (have_posts()) {
