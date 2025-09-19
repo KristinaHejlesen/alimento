@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Alimento</title>
     <?php
-    wp_head();
-
-    ?>
+    wp_head(); ?>
 
 </head>
 
@@ -22,7 +20,7 @@
                     <input type="text" placeholder="Search here..." />
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
-                <a id="login" href="#">Log in <i class="fa-regular fa-user"></i></a>
+                <a id="login" href="<?php echo esc_url(site_url('/alimento-admin')) ?>">Log in <i class="fa-regular fa-user"></i></a>
                 <button id="burgerMenu"><i class="fa-solid fa-bars"></i></button>
             </div>
 
@@ -32,9 +30,8 @@
                         <input type="text" placeholder="Search here..." />
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <a href="#">Log in <i class="fa-regular fa-user"></i></a>
+                    <a href="<?php echo esc_url(site_url('/alimento-admin')) ?>">Log in <i class="fa-regular fa-user"></i></a>
                 </div>
-
                 <ul>
                     <li><a href="<?php echo site_url(); ?>">Front page</a></li>
                     <li><a href="<?php echo get_post_type_archive_link('recipe'); ?>">Recipes</a></li>
