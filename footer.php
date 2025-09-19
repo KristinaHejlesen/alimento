@@ -11,8 +11,8 @@
             <div class="mostVisited">
                 <p><b>Most visited sites:</b></p>
                 <br />
-                <a href="#">Recipes</a>
-                <a href="#">Blog</a>
+                <a href="<?php echo get_post_type_archive_link('recipe'); ?>">Recipes</a>
+                <a href="<?php echo get_post_type_archive_link('blog'); ?>">Blog</a>
                 <a href="#">Kitchen utensils</a>
             </div>
 

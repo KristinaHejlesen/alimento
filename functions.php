@@ -8,6 +8,7 @@ function alimento_files()
     wp_enqueue_style('alimento', get_theme_file_uri('/assets/css/style.css'));
     /*henter fontawesome */
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+    wp_enqueue_style('adobe font', 'https://use.typekit.net/bnw8qmo.css');
     /*henter google fonts */
     wp_enqueue_style(
         'google-fonts',

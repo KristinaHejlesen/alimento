@@ -23,46 +23,46 @@ get_header();
         while ($recipeSite->have_posts()) {
             $recipeSite->the_post(); ?>
 
-            <div>
-                <img
-                    src="<?php the_post_thumbnail_url(); ?>"
-                    alt="Image of a delicious air fryer cheesy chicken recipe" />
-                <p class="cardHeadline"><?php
-                                        echo wp_trim_words(get_the_title(), 5); ?>
-
-
-                </p>
-                <div class="timeDifficulty">
-                    <p>Total time: <?php
-                                    the_field('time');
-                                    ?>
-                        <!--Vi tjekker efter om brugeren har valgt home cook, ameture cook o.s.v. Gemmer acf feltet i en variabel $difficulty og henter feltet. lavet et if statment og spørger om $difficulty == 'home cook'-->
-                        | Difficulty:
-                        <?php
-                        $difficulty = get_field('difficulty'); ?>
-                        <?php
-                        if ($difficulty == 'Home cook') {
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                        } else if ($difficulty == 'Amature cook') {
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                        } else if ($difficulty == 'Professional cook') {
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                            echo '<span class="material-symbols-outlined"> chef_hat </span>';
-                        } else {
-                            echo '<p> no difficulty set</p>';
-                        }
-                        ?>
-
+            <a href="<?php the_permalink(); ?>">
+                <div>
+                    <img
+                        src="<?php the_post_thumbnail_url(); ?>"
+                        alt="Image of a delicious air fryer cheesy chicken recipe" />
+                    <p class="cardHeadline"><?php
+                                            echo wp_trim_words(get_the_title(), 5); ?>
                     </p>
+                    <div class="timeDifficulty">
+                        <p>Total time: <?php
+                                        the_field('time');
+                                        ?>
+                            <!--Vi tjekker efter om brugeren har valgt home cook, ameture cook o.s.v. Gemmer acf feltet i en variabel $difficulty og henter feltet. lavet et if statment og spørger om $difficulty == 'home cook'-->
+                            | Difficulty:
+                            <?php
+                            $difficulty = get_field('difficulty'); ?>
+                            <?php
+                            if ($difficulty == 'Home cook') {
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                            } else if ($difficulty == 'Amature cook') {
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                            } else if ($difficulty == 'Professional cook') {
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                                echo '<span class="material-symbols-outlined"> chef_hat </span>';
+                            } else {
+                                echo '<p> no difficulty set</p>';
+                            }
+                            ?>
+
+                        </p>
+                    </div>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <!--vi anvender the_permalink() til at hente linket til det specifikke post her recipe-->
+                    <span class="spanButton">Try recipe</span>
                 </div>
-                <div class="rating">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <!--vi anvender the_permalink() til at hente linket til det specifikke post her recipe-->
-                <a href="<?php the_permalink(); ?>">Try recipe today</a>
-            </div>
+            </a>
         <?php
         }
         ?>
@@ -93,32 +93,33 @@ wp_reset_postdata();
 
         while ($blog->have_posts()) {
             $blog->the_post(); ?>
-            <div>
-                <img
-                    src="<?php the_post_thumbnail_url(); ?>" />
-                <p class="cardHeadline"><?php echo wp_trim_words(get_the_title(), 7);
+            <a href="<?php the_permalink(); ?>">
+                <div>
+                    <img
+                        src="<?php the_post_thumbnail_url(); ?>" />
+                    <p class="cardHeadline"><?php echo wp_trim_words(get_the_title(), 7);
 
-                                        ?>
-                </p>
-                <div class="timeDifficulty">
-                    <p>Forfatter: <?php
-                                    //kigger ind i arrayet user
-                                    $forfatter = get_field('authoralimento');
-                                    //vi printer arrayet ud for at se hvilken key vi skal bruge for kun at få navnet ud. 
-                                    // echo '<pre>';
-                                    // print_r($forfatter);
-                                    // echo '</pre>';
-                                    echo $forfatter['display_name'];
-                                    ?>
-                        <br>Dato: <?php
-                                    the_field('date');
-                                    ?>
-
+                                            ?>
                     </p>
-                </div>
-                <a href="<?php the_permalink(); ?>">Get inspired</a>
-            </div>
+                    <div class="timeDifficulty">
+                        <p>Forfatter: <?php
+                                        //kigger ind i arrayet user
+                                        $forfatter = get_field('authoralimento');
+                                        //vi printer arrayet ud for at se hvilken key vi skal bruge for kun at få navnet ud. 
+                                        // echo '<pre>';
+                                        // print_r($forfatter);
+                                        // echo '</pre>';
+                                        echo $forfatter['display_name'];
+                                        ?>
+                            <br>Dato: <?php
+                                        the_field('date');
+                                        ?>
 
+                        </p>
+                    </div>
+                    <span class="spanButton">Get inspired</span>
+                </div>
+            </a>
         <?php
         }
         ?>

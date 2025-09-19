@@ -286,6 +286,7 @@ h2 {
     font-size: 1.125rem;
     font-weight: 600;
     padding-top: 3px;
+    color: black;
 }
 
 .timeDifficulty {
@@ -305,23 +306,46 @@ h2 {
     color: var(--star);
 }
 
-.cardWrapper a,
-aside a {
+/* Ændringer til cards, så alt er klikbart. */
+
+.cardWrapper .spanButton,
+aside .spanButton {
     width: 100%;
     display: block;
     background-color: var(--normalButton);
     text-decoration: none;
     color: white;
     margin-top: 10px;
-    padding-block: 0.2rem;
+    padding-block: 0.3rem;
     border-radius: var(--borderRadius);
     text-align: center;
     font-size: 1.125rem;
     font-weight: 600;
+    border: none;
+    cursor: pointer;
 }
 
+aside a {
+    text-decoration: none;
+    margin-bottom: 3rem;
+    border-radius: var(--borderRadius);
+}
+
+aside a:hover {
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    transition: 500ms ease;
+}
+
+.cardWrapper a {
+    text-decoration: none;
+    border-radius: var(--borderRadius);
+}
+
+
 .cardWrapper a:hover {
-    transform: scale(1.05);
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
     transition: 500ms ease;
 }
 
@@ -384,7 +408,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     max-width: 1100px;
-    margin: 0 auto var(--sectionSpacer) auto;
+    margin: var(--sectionSpacer) auto var(--sectionSpacer) auto;
     padding-inline: 1rem;
 }
 
@@ -407,8 +431,9 @@ footer {
 }
 
 .mainContentSingleBlog h2 {
-    margin-top: var(--overskriftSpacer);
+    margin-block: var(--overskriftSpacer) 5px;
     font-size: var(--h2desktop);
+
    
 }
 
@@ -427,7 +452,7 @@ aside {
 
 aside div {
     width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 aside div img {
@@ -461,18 +486,31 @@ aside div img {
     margin: 0 auto var(--sectionSpacer) auto;
 }
 
+.blogposts a {
+    text-decoration: none;
+    color: black;
+}
+
 .blogPostsWrapper {
     display: grid;
     grid-template-columns: 25% 1fr;
     gap: 2rem;
     margin-bottom: var(--sectionSpacer);
     padding-inline: 1rem;
+    border-radius: var(--borderRadius);
+}
+
+.blogPostsWrapper:hover {
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    transition: 500ms ease;
 }
 
 .blogPostsWrapper img {
     width: 100%;
     height: 230px;
     object-fit: cover;
+    border-radius: var(--borderRadius);
 }
 
 .blogPostsWrapper a {
@@ -480,10 +518,6 @@ aside div img {
     text-decoration: none;
 }
 
-.blogPostsWrapper a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-}
 
 .blogPostsWrapper h2 {
     margin-block: 0;
@@ -499,7 +533,6 @@ aside div img {
     margin: 0 auto var(--sectionSpacer) auto;
     padding-inline: 1rem;
 }
-
 /* Recipe archive */
 .archiveH1 {
     text-align: center;
@@ -543,7 +576,7 @@ aside div img {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: var(--sectionSpacer) auto 0 auto;
     padding-inline: 2rem;
     font-size: var(--broedtekst);
 }
@@ -645,6 +678,13 @@ aside div img {
     border: 0.5px solid black;
     cursor: pointer;
     margin-left: auto;
+    background-color: var(--normalButton);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+
 }
 
 .answer {
@@ -685,7 +725,7 @@ aside div img {
         top: 60px;
         right: 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        z-index: 100;
+        z-index: 200;
         border-radius: var(--borderRadius) 0 0 var(--borderRadius);
     }
 
@@ -706,6 +746,14 @@ aside div img {
         flex-direction: column;
         margin-bottom: 1rem;
         gap: 1rem;
+    }
+
+        .globalNavTop #login {
+          display: none;
+        }
+    
+    #logo{
+        display: block;
     }
 
     .topSectionMobileNav a {
@@ -912,6 +960,7 @@ aside div img {
 
     #logo {
         font-size: 2rem;
+        
     }
 
     .globalNavTop {

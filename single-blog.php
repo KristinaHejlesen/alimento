@@ -133,27 +133,33 @@ while (have_posts()) {
         while ($blog->have_posts()) {
             $blog->the_post(); ?>
 
-            <div>
-                <img
-                    src="<?php the_post_thumbnail_url(); ?>"
-                    alt="Image of a delicious air fryer cheesy chicken recipe" />
-                <p class="cardHeadline"><?php the_title();
+            <a href="<?php the_permalink(); ?>">
+                <div>
+                    <img
+                        src="<?php the_post_thumbnail_url(); ?>" />
+                    <p class="cardHeadline"><?php echo wp_trim_words(get_the_title(), 7);
+
+                                            ?>
+                    </p>
+                    <div class="timeDifficulty">
+                        <p>Forfatter: <?php
+                                        //kigger ind i arrayet user
+                                        $forfatter = get_field('authoralimento');
+                                        //vi printer arrayet ud for at se hvilken key vi skal bruge for kun at få navnet ud. 
+                                        // echo '<pre>';
+                                        // print_r($forfatter);
+                                        // echo '</pre>';
+                                        echo $forfatter['display_name'];
                                         ?>
-                </p>
-                <div class="asideAuthorTime">
-                    <p>Forfatter: <?php
-                                    //kigger ind i arrayet user
-                                    $forfatter = get_field('authoralimento');
-                                    //vi printer arrayet ud for at se hvilken key vi skal bruge for kun at få navnet ud. 
-                                    // echo '<pre>';
-                                    // print_r($forfatter);
-                                    // echo '</pre>';
-                                    echo $forfatter['display_name'];
-                                    ?> |</p>
-                    <p>Dato: <?php the_field('date'); ?></p>
+                            <br>Dato: <?php
+                                        the_field('date');
+                                        ?>
+
+                        </p>
+                    </div>
+                    <span class="spanButton">Get inspired</span>
                 </div>
-                <a href="<?php the_permalink(); ?>    ">Get inspired</a>
-            </div>
+            </a>
         <?php
         }
         ?>
