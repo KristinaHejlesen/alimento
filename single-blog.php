@@ -113,7 +113,6 @@ while (have_posts()) {
     <?php
 }
     ?>
-    </section>
 
 
 
@@ -160,6 +159,7 @@ while (have_posts()) {
         ?>
 
     </aside>
+    </article>
 
     <?php
     get_footer();

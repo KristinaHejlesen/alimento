@@ -209,6 +209,7 @@ input {
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
+    z-index: 100;
 }
 
 .heroText {

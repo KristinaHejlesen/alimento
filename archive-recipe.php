@@ -21,9 +21,9 @@ get_header();
                     src="<?php the_post_thumbnail_url(); ?>"
                     alt="Image of a delicious air fryer cheesy chicken recipe" />
                 <p class="cardHeadline"><?php
-                                        the_title();
+                                        echo wp_trim_words(get_the_title(), 5); ?>
 
-                                        ?>
+
                 </p>
                 <div class="timeDifficulty">
                     <p>Total time: <?php

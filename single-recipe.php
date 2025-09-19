@@ -8,7 +8,10 @@ while (have_posts()) {
 
     <section class="singleRecipeSection">
         <div class="recipeInfo">
-            <h1 class="recipe_headline_single">Easy spaghetti carbonara</h1>
+            <h1 class="recipe_headline_single"><?php
+                                                the_title();
+                                                ?>
+            </h1>
             <p class="description">
                 <?php
                 the_field('description');
@@ -31,6 +34,7 @@ while (have_posts()) {
                                 // echo '</pre>';
                                 echo $forfatter['display_name'];
                                 ?></a>
+                <div><?php echo kk_star_ratings(); ?></div>
             </div>
             <div class="timeDifficultyPrint">
                 <p class="time"><i class="fa-solid fa-clock"></i> Total time: <?php the_field('time'); ?></p>
@@ -69,12 +73,12 @@ while (have_posts()) {
         <div>
             <h2 class="ingredients">Ingredients</h2>
             <ul>
-                <li>
-                    <?php
-                    the_field('ingredients');
-                    ?>
 
-                </li>
+                <?php
+                the_field('ingredients');
+                ?>
+
+
 
 
             </ul>
